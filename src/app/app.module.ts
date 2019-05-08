@@ -5,10 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
+import { CustomerComponent } from './customer/customer.component';
+import { AddressComponent } from './address/address.component';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomerComponent,
+    AddressComponent,
+    PersonalDetailsComponent
   ],
   imports: [
     BrowserModule,
