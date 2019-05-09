@@ -8,13 +8,15 @@ import { SharedModule } from './shared/shared.module';
 import { CustomerComponent } from './customer/customer.component';
 import { AddressComponent } from './address/address.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
     AddressComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
