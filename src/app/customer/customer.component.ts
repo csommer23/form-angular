@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-customer',
@@ -10,22 +11,33 @@ import { Subscription } from 'rxjs';
 export class CustomerComponent implements OnInit, OnDestroy {
 
   sub: Subscription;
-  custom: any = {};
+  customer = this.fb.group({
+    id: [''],
+    firstName: [''],
+    lastName: [''],
+  });
 
   constructor(
+    private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(
       (queryParams: any) => {
-        this.custom.id = queryParams['id'];
+        this.customer.patchValue({
+          id: queryParams['id']
+        });
       }
     );
   }
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+  }
+
+  onSubmit() {
+    console.warn(this.customer.value);
   }
 
 }
