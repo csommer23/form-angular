@@ -5,20 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
-import { CustomerComponent } from './customer/customer.component';
-import { AddressComponent } from './address/address.component';
-import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { HomeComponent } from './home/home.component';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponent,
-    AddressComponent,
-    PersonalDetailsComponent,
     HomeComponent
   ],
   imports: [
@@ -27,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
